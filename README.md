@@ -1,5 +1,7 @@
 # README
 
+# Description
+
 A rails project that allows users to connect their devices (iPhones for now) together and simultaneously start recording video or taking photos. That way users can have synchronized video recording for editing or to create other effects.
 
 This README would normally document whatever steps are necessary to get the

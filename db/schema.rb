@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_22_235153) do
+ActiveRecord::Schema.define(version: 2023_02_23_213827) do
+
+  create_table "group_members", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "user_id", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "invites", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "user_id", null: false
+    t.integer "inviter_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "accepted_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -9,4 +9,14 @@ class User < ApplicationRecord
     self.authentication_token_created_at = Time.now
     self.save!
   end
+
+  def fetch_user_groups
+    group_members = GroupMember.where(user_id: self.id)
+    group_ids = group_members.map { |group_member| group_member.group_id }
+    Group.where(id: group_ids)
+  end 
+
+  def fetch_invites
+    Invite.where(user_id: self.id).not_accepted
+  end
 end

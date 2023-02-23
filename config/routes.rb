@@ -8,6 +8,8 @@ Rails.application.routes.draw do
         post "users/login", to: 'sessions#create'
         get "users/me", to: 'users#me'
       end
+      resources :groups, only: [:create, :index]
+      resources :invites, only: [:create, :index]
     end
   end
 end

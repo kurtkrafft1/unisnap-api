@@ -24,6 +24,7 @@ gem 'devise', '>= 4.0.0', '< 5.0.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise-token_authenticatable', '~> 1.1.0'
 gem 'pundit'
+gem 'rack-cors'
 
 
 # Use Active Storage variant

@@ -25,6 +25,8 @@ gem 'devise', '>= 4.0.0', '< 5.0.0'
 gem 'devise-token_authenticatable', '~> 1.1.0'
 gem 'pundit'
 gem 'rack-cors'
+gem 'rspec'
+
 
 
 # Use Active Storage variant
@@ -48,11 +50,15 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+   gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'fuubar'
+  gem 'pundit-matchers'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
+  gem 'shoulda-matchers'
+  gem 'webdrivers', require: false
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
